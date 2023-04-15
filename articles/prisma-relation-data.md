@@ -1,8 +1,8 @@
 ---
 title: "【Prisma】リレーション先のデータを取得する方法"
-emoji: "😎"
+emoji: "🦍"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: [React, Nesxtjs, Typescript, Javascript, tsconfig]
+topics: [React, Nesxtjs, Typescript, Javascript, Prisam]
 published: true
 ---
 
