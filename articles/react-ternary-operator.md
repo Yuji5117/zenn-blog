@@ -20,7 +20,7 @@ const value = condition ? valueIfTrue : valueIfFalse;
 const displayedResult = favoriteResult ? favoriteResult : result;
 ```
 
-## || 演算子の利用方法
+## OR 演算子の利用方法
 
 一方、OR 演算子を利用すると、以下のように書くことができます
 
@@ -30,7 +30,7 @@ const displayedResult = favoriteResult || result;
 
 この方法で、favoriteResult が truthy (true または truthy と評価される値) であれば favoriteResult が displayedResult に代入され、falsy (false または falsy と評価される値) であれば result が displayedResult に代入されます。
 
-## なぜ OR演算子が良いのか？
+## なぜ OR 演算子が良いのか？
 
 - 簡潔性: 三項演算子よりも少ない文字で同じ意味を持つコードを書くことができる。
 - 読みやすさ: シンプルな条件の場合、OR 演算子を使った方が直感的であり、コードの読み手にとってわかりやすい場合が多い。
