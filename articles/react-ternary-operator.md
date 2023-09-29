@@ -6,6 +6,8 @@ topics: ["react", "nextjs", "javascript", "typescript"]
 published: true
 ---
 
+Reactを使って個人開発をしているのですが、メモとして三項演算子とOR演算子について記載したいと思います！
+
 ## 三項演算子の基本
 
 三項演算子は以下のように使われます:
