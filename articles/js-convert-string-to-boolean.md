@@ -11,7 +11,7 @@ published: true
 React の開発を進めている際、あるコンポーネントに props として文字列が存在するかどうかを真偽値として渡すシチュエーションがありました。
 以下はその際の簡略化されたコードです。
 
-```js
+```jsx
 <FavoriteButton
   hasFavorite={favoriteResult !== ""} //　⇦ 文字列が含まれていれば`true`、そうでなければ`false`
   addToFavorite={addToFavorite}
