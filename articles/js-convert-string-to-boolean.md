@@ -21,7 +21,7 @@ React の開発を進めている際、あるコンポーネントに props と�
 
 このコードの意図としては、favoriteResult に文字列が存在すれば hasFavorite に true を、存在しなければ false を渡すというものです。
 
-最初のアプローチでは favoriteResult !== ""という式を使用して、文字列が空でない場合に true を返すようにしていました。しかし、この表現をよりシンプルにできないかと思い、調査したところ**二重否定（!!）**を使う方法が見つかりました。この記事では、その手法について簡単に解説します。
+最初のアプローチでは favoriteResult !== ""という式を使用して、文字列が空でない場合に true を返すようにしていました。しかし、この表現をよりシンプルにできないかと思い、調査したところ`二重否定（!!）`を使う方法が見つかりました。この記事では、その手法について簡単に解説します。
 
 ## 二重否定（!!）とは？
 
@@ -90,4 +90,4 @@ console.log(hasText); // true
 
 ## 参考記事
 
-[MDNの!!に関するセクション](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Logical_NOT#%E4%BA%8C%E9%87%8D%E5%90%A6%E5%AE%9A_!!)
+[MDN の!!に関するセクション](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Logical_NOT#%E4%BA%8C%E9%87%8D%E5%90%A6%E5%AE%9A_!!)
