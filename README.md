@@ -6,6 +6,7 @@
 
 👇 新しい記事を作成する
 $ zenn new:article
+$ npx zenn new:article --slug 記事のスラッグ --title タイトル --type tech --emoji ✨
 
 👇 新しい本を作成する
 $ zenn new:book
