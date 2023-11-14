@@ -3,7 +3,7 @@ title: "【JS】constで定義したオブジェクトや配列は、中身を�
 emoji: "🧊"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["react", "nextjs", "javascript", "typescript"]
-published: false
+published: true
 ---
 
 # 動機
