@@ -2,7 +2,7 @@
 title: "【LeetCode】2727.Is Object Emptyに挑戦（30 Days of JavaScript編）"
 emoji: "✨"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["LeetCode", "javascript", "React"]
+topics: ["LeetCode", "javascript"]
 published: true
 ---
 
