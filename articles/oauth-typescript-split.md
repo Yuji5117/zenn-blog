@@ -12,7 +12,7 @@ published: true
 
 [GitHubリポジトリはこちら](https://github.com/Yuji5117/oauth-demo)
 
-その中で、**「このコード、値が存在しない場合、普通にクラッシュするな…」**という場面に遭遇しました。
+その中で、「このコード、値が存在しない場合、普通にクラッシュするな…」という場面に遭遇しました。
 
 今回、簡易的なサーバーを JavaScript で実装していたため、TypeScript は使用していませんでしたが、**この一件で「やっぱり TypeScript って大事だ」と強く実感**したので、学びのログとして残します。
 
@@ -29,7 +29,7 @@ const token = authHeader.split(" ")[1];
 
 久しぶりに JavaScript だけで書いていたため、型チェックもなくエラーも出ないのでそのままにしていたのですが、ふと「authorization がなかったらエラーでクラッシュするぞ…」と気づきました。
 
-TypeScript であれば、authorization が undefined の可能性がある場合、**「Object is possibly 'undefined'」**といったエラーが表示されて、その場で気づくことができます。
+TypeScript であれば、authorization が undefined の可能性がある場合、「Object is possibly 'undefined'」といったエラーが表示されて、その場で気づくことができます。
 
 普段は TypeScript の型エラーに助けられていたことを、ここで改めて実感しました。
 
