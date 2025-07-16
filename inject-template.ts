@@ -38,11 +38,14 @@ async function main() {
     },
   ]);
 
-  // テンプレートの内容を読み込む
   const targetPath = path.join(articleDir, selectedFile);
-  const content = await fs.promises.readFile(templatePath, "utf-8");
 
-  fs.writeFileSync(targetPath, content);
+  const originalContent = await fs.promises.readFile(targetPath, "utf-8");
+  const templateContent = await fs.promises.readFile(templatePath, "utf-8");
+
+  const newContent = `${originalContent}\n${templateContent}`;
+
+  fs.writeFileSync(targetPath, newContent);
 
   console.log(
     `✅ テンプレート ${templateName} を ${selectedFile} に適用しました！`
