@@ -11,5 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "zenn-cli": "^0.1.141"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   }
 }
