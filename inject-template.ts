@@ -20,21 +20,36 @@ async function main() {
   }
 
   const articleDir = path.join(__dirname, "articles");
-  const files = fs
-    .readdirSync(articleDir)
-    .filter((file) => file.endsWith(".md"));
+  const fileNames = await fs.promises.readdir(articleDir);
+  const filesWithTime = await Promise.all(
+    fileNames
+      .filter((file) => file.endsWith(".md"))
+      .map(async (file) => {
+        const fullPath = path.join(articleDir, file);
+        const stat = await fs.promises.stat(fullPath);
 
-  if (!files) {
+        return {
+          file,
+          mtime: stat.mtime,
+        };
+      })
+  );
+
+  if (!filesWithTime) {
     console.error(`❌ 記事が1件も見つかりません。`);
     process.exit(1);
   }
+
+  const sortedFileByLatest = filesWithTime
+    .sort((a, b) => b.mtime.getTime() - a.mtime.getTime())
+    .map((entry) => entry.file);
 
   const { selectedFile } = await inquirer.prompt([
     {
       type: "list",
       name: "selectedFile",
       message: "テンプレートを適用する記事を選んでください：",
-      choices: files,
+      choices: sortedFileByLatest,
     },
   ]);
 
