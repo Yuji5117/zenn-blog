@@ -5,6 +5,7 @@ import inquirer from "inquirer";
 async function main() {
   const args = process.argv.slice(2);
   const templateArg = args.find((arg) => arg.startsWith("--template="));
+  const overwriteArg = args.find((arg) => arg === "--overwrite");
 
   if (!templateArg) {
     console.error("❌ --template={テンプレート名}を指定してください。");
@@ -58,7 +59,9 @@ async function main() {
   const originalContent = await fs.promises.readFile(targetPath, "utf-8");
   const templateContent = await fs.promises.readFile(templatePath, "utf-8");
 
-  const newContent = `${originalContent}\n${templateContent}`;
+  const newContent = overwriteArg
+    ? templateContent
+    : `${originalContent}\n${templateContent}`;
 
   fs.writeFileSync(targetPath, newContent);
 
