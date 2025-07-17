@@ -63,7 +63,7 @@ async function main() {
     ? templateContent
     : `${originalContent}\n${templateContent}`;
 
-  fs.writeFileSync(targetPath, newContent);
+  await fs.promises.writeFile(targetPath, newContent);
 
   console.log(
     `✅ テンプレート ${templateName} を ${selectedFile} に適用しました！`
