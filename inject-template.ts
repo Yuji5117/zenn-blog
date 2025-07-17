@@ -36,7 +36,7 @@ async function main() {
       })
   );
 
-  if (!filesWithTime) {
+  if (filesWithTime.length === 0) {
     console.error(`❌ 記事が1件も見つかりません。`);
     process.exit(1);
   }
