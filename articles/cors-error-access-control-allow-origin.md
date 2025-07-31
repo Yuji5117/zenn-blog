@@ -7,11 +7,13 @@ published: true
 ---
 
 ## 発生したエラー
+
 ``` bash
 Access to fetch at 'http://localhost:5001/me' from origin 'http://localhost:3000' has been blocked by CORS policy:
 Response to preflight request doesn't pass access control check:
 No 'Access-Control-Allow-Origin' header is present on the requested resource.
 ```
+
 ## 原因の推測
 サーバー側で Access-Control-Allow-Origin ヘッダーが返却されていないため、ブラウザがセキュリティポリシーでブロック。
 
@@ -31,7 +33,13 @@ cors() を使ってすべてのオリジンを許可 → エラー解消。
 fetch 側で credentials: "include" を指定して Cookie を送信できるように設定。
 
 ## 解決策
-``` ts
+corsのインストール
+
+```bash
+npm install cors
+```
+
+```js
 
 // Express サーバー側
 const cors = require("cors");
@@ -43,7 +51,7 @@ app.use(cors({
 
 ```
 
-``` ts
+```js
 
 // フロントエンド側（fetch）
 fetch("http://localhost:5001/me", {
@@ -56,10 +64,7 @@ fetch("http://localhost:5001/me", {
 ```
 
 ## 学び・今後の対策
-CORS はブラウザ側のセキュリティ仕様による制限であり、サーバーとフロントの両方の設定が必要。
-
-credentials: true を使う場合、origin: "*" は使えない（セキュリティ上禁止）。
-
-クロスオリジン通信におけるプリフライト（OPTIONS）リクエストの重要性も理解した。
-
-再発防止のため、今後は開発初期から cors の設定を意識し、fetch とサーバーの通信仕様を合わせて設計する。
+- CORS はブラウザ側のセキュリティ仕様による制限であり、サーバーとフロントの両方の設定が必要。
+- credentials: true を使う場合、origin: "*" は使えない（セキュリティ上禁止）。
+- クロスオリジン通信におけるプリフライト（OPTIONS）リクエストの重要性も理解した。
+- 再発防止のため、今後は開発初期から cors の設定を意識し、fetch とサーバーの通信仕様を合わせて設計する。
