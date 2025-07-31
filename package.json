@@ -11,7 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "inquirer": "^12.7.0",
-    "zenn-cli": "^0.1.141"
+    "zenn-cli": "^0.1.141",
+    "zenn-template-cli": "^1.0.5"
   },
   "devDependencies": {
     "@types/node": "^24.0.14",
