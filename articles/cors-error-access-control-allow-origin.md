@@ -1,5 +1,5 @@
 ---
-title: "クロスオリジン通信で遭遇したCORSエラーを徹底解説！原因・対策・学びの記録"
+title: "CORSエラーにハマった話とその解決メモ"
 emoji: "☺️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["react", "nextjs", "nodejs", "typescript", "javascript", "expressjs"]
