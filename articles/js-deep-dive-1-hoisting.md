@@ -58,7 +58,7 @@ console.log(x) // valueと出力される。
 なぜなら、let や const で宣言された変数は、「一時的なデッドゾーン（TDZ: Temporal Dead Zone）」に入っているため、宣言より前にアクセスすることができないのです。
 
 ### TDZ（一時的なデッドゾーン）て何？
-**TDZ（Temporal Dead Zone）**とは、変数がスコープ内で既にホイスティングされてはいるものの、まだ初期化されていない状態のことを指します。
+TDZ（Temporal Dead Zone）とは、変数がスコープ内で既にホイスティングされてはいるものの、まだ初期化されていない状態のことを指します。
 この期間中に変数へアクセスしようとすると、以下のように ReferenceError が発生します。
 
 ```js
@@ -148,8 +148,8 @@ sayHi = function () {
 
 ### まとめ
 - 関数宣言は関数本体ごと巻き上げられる → 宣言前でも呼び出せる
-- **関数式（const / let）**はTDZの影響で宣言前に参照不可 → ReferenceError
-- **関数式（var）**は変数のみ巻き上げ → undefined → TypeError
+- 関数式（const / let）はTDZの影響で宣言前に参照不可 → ReferenceError
+- 関数式（var）は変数のみ巻き上げ → undefined → TypeError
 
 
 ## 全体のまとめ
@@ -165,3 +165,7 @@ sayHi = function () {
 
 ## 補足
 const や let については内部的にはスコープの先頭に移動しているとも言われますが、「一時的なデッドゾーン（TDZ）」によって参照できないため、厳密には「ホイスティングされている」と断言しにくい側面もあるようです。
+
+## 参考記事
+
+[MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript)
