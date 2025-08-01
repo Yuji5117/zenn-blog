@@ -3,7 +3,7 @@ title: "JavaScriptを深く知る旅 #1：ホイスティングってなに？"
 emoji: "😇"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["react", "nextjs", "nodejs", "typescript", "javascript"]
-published: false
+published: true
 ---
 
 ## はじめに
@@ -153,4 +153,15 @@ sayHi = function () {
 
 
 ## 全体のまとめ
-TODO
+- ホイスティングとは、変数や関数の宣言がスコープの先頭に「巻き上げられる」挙動のこと。
+- var で宣言した変数は、宣言のみが巻き上げられ、値は undefined になる（そのため実行時エラーにはならないが、意図しない挙動になりやすい）。
+- let / const は 「一時的なデッドゾーン（TDZ）」 に入るため、宣言前にアクセスすると ReferenceError が発生する。
+- 関数宣言は、関数全体が巻き上げられるため、宣言前に呼び出しても実行可能。
+- 一方で 関数式は、変数として扱われるため：
+  - var を使えば undefined が巻き上げられ、実行時に TypeError になる。
+  - let / const を使えば TDZ に入り、ReferenceError となる。
+
+いつか「あ、あのときのホイスティングだ」と気づける日が来るように。React/Next.js の実践の中で、知識が発揮できれば嬉しいです！！🌱
+
+## 補足
+const や let については内部的にはスコープの先頭に移動しているとも言われますが、「一時的なデッドゾーン（TDZ）」によって参照できないため、厳密には「ホイスティングされている」と断言しにくい側面もあるようです。
