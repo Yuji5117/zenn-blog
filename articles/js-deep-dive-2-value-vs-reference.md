@@ -92,6 +92,8 @@ console.log(original.address.city); // "Osaka" → 元のオブジェクトも�
 深いコピー（deep copy）とは、オブジェクトのネストされたすべての階層を含めてコピーする方法です。
 これにより、コピー先を変更しても元のオブジェクトには影響しません。
 
+### JSON を使った深いコピー
+
 注意点
 - 関数や undefined、シンボルはコピー対象外になる
 - Date や RegExp は文字列化されてしまう
@@ -118,7 +120,7 @@ console.log(original.address.city); // "Tokyo" → 影響なし
 
 ```
 
-モダンな書き方としては、structuredCloneがあります。
+### structuredClone を使った深いコピー
 ES2021 以降、ブラウザや Node.js に標準搭載された組み込み関数です。関数・Date・循環参照なども正しく複製できるのが特徴です。
 
 ```js
@@ -135,6 +137,15 @@ copy.address.city = "Osaka";
 console.log(original.address.city); // → "Tokyo"
 
 ```
+
+### ライブラリを使う方法（lodash）
+
+```js
+import cloneDeep from "lodash/cloneDeep";
+
+const copy = cloneDeep(original);
+```
+
 
 ## useState 更新時の注意点
 React でオブジェクトを state として管理する場合、オブジェクトのプロパティを直接変更しても再レンダリングされません。これは、React が state の更新判定に Object.is() （参照の等価性チェック）を使っているためで、オブジェクトの中身（プロパティ）が変わっても参照先が同じだと「変化なし」とみなされるからです。
